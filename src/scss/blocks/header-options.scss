@@ -1,0 +1,14 @@
+.header-options {
+    position: relative;
+}
+
+.header-options__search {
+    cursor: pointer;
+    color:white;
+    background-color: inherit;
+    outline: none;
+    border:none;
+    position: absolute;
+    top: -30px;
+    right: 2%;
+}

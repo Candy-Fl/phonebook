@@ -1,0 +1,11 @@
+// global
+@import "global/normalize";
+@import "global/global.scss";
+@import "global/variables.scss";
+
+//blocks 
+@import "blocks/page.scss";
+@import "blocks/header.scss";
+@import "blocks/header-main.scss";
+@import "blocks/header-options.scss";
+@import "blocks/contacts.scss";
