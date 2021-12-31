@@ -20,30 +20,374 @@
                 </button>
             </section>
             <section class="contacts">
-                <figure id="card" class="contacts__list">
-                    <figcaption id="letter" class="contatcs__list--letter">А</figcaption>
-                        <div id="card" class="contatcs__element">
-                            <header id="name" class="contatcs__element--name">Вася</header>
-                        </div>
-                        <div id="card" class="contatcs__element contatcs__element--active">
-                            <header class="contatcs__element--name">Коля</header>
-                            <input class="contatcs__element--input-name" type="text">
-                            <input class="contatcs__element--input-number" type="tel">
-                        </div>
-                </figure>
-                <figure id="card" class="contacts__list">
-                    <figcaption id="letter" class="contatcs__list--letter">Б</figcaption>
-                        <div id="card" class="contatcs__element">
-                            <header id="name" class="contatcs__element--name">Вася</header>
-                        </div>
-                        <div id="card" class="contatcs__element">
-                            <header class="contatcs__element--name">Коля</header>
-                        </div>
-                </figure>
+                <ul id="block" class="contacts__list">
+
+                </ul> 
+
             </section>
         </main>
         <footer class="page-footer">
+<!-- templae for card -->
+            <template id ="card">
+                <form class="popup" method="post" action="https://24.javascript.pages.academy/keksobooking" enctype="multipart/form-data" autocomplete="off">
+                    
+                    <h3 class="popup__title"></h3>
+                    <div class="popup__hide">
+                        <p>Avatar:</p>
+                        <img src="" class="popup__avatar" width="170" height="170" alt="User Photo">
 
+                        <p>Name:</p>
+                        <input class="popup__name" type="text" value="">
+                        
+                        <p>UserName:</p>
+                        <input class="popup__userName" type="text" value="">
+
+                        <p>phone:</p>
+                        <input class="popup__number" type="tel" value="">
+
+                        <p>Email:</p>
+                        <input class="popup__email" type="email" value="">
+
+                        <p>WebSite:</p>
+                        <input class="popup__website" type="text" value="">
+
+                        <p>
+                            Address:
+                            <button class="popup__address-button" type="button"></button>
+                        </p>
+                        <ul class="popup__address">
+                            <li>
+                                <p>City</p>
+                                <input class="popup__address--city" type="text" value="">
+                            </li>
+
+                            <li>
+                                <p>Country:</p>
+                                <input class="popup__address--country" type="text" value="">
+                            </li>
+
+                            <li>
+                                <p>Geo</p>
+                                <ul class="popup__geo">
+                                    <li>
+                                        <p>lat:</p>
+                                        <input class="pop__geo--lat" type="number" value="">
+                                    </li>
+                                    <li>
+                                        <p>lng:</p>
+                                        <input class="pop__geo--lng" type="number" value="">
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <p>State:</p>
+                                <input class="popup__address--state" type="text">
+                            </li>
+
+                            <li>
+                                <p>Street A</p>
+                                <input type class="popup__address--street-a" type="text">
+                            </li>
+                            
+                            <li>
+                                <p>Street B</p>
+                                <input class="popup__address--street-b" type="text">
+                            </li>
+                            
+                            <li>
+                                <p>Street C</p>
+                                <input class="popup__address--street-c" type="text">
+                            </li>
+                            
+                            <li>
+                                <p>Street D</p>
+                                <input class="popup__address--street-d" type="text">
+                            </li>
+
+                            <li>
+                                <p>Zipcode:</p>
+                                <input class="popup__address--zipcode" type="text">
+                            </li>
+                        </ul>
+
+                        <p class="popup__favorite-block">
+                            Favorite:
+                            <input class="popup__favorite" type="checkbox">
+                        </p>
+
+                        <p>
+                            Company
+                            <button class="popup__company-button" type="button"></button>
+                        </p>
+                        <ul class="popup__company">
+                            <li>
+                                <p>Bs:</p>
+                                <input class="popup__company--bs" type="text" value="">
+                            </li>
+                            <li>
+                                <p>Catch Phrase:</p>
+                                <input class="popup__company--catch-phrase" type="text" value="">
+                            </li>
+                            <li>
+                                <p>Name:</p>
+                                <input class="popup__company--name" type="text" value="">
+                            </li>
+                        </ul>
+
+                        <p>Account History
+                            <button class="popup__history-button" type="button"></button>
+                        </p>
+                        <ul class="popup__history">
+                            <li class="popup__history--element">
+                                <p class="popup__history--number">1</p>
+                                <ul class="popup__history--info-list">
+                                    <li>
+                                        <p>Account:</p>
+                                        <input class="popup__history--account" type="text">
+                                    </li>
+                                    <li>
+                                        <p>Amount:</p>
+                                        <input class="popup__history--amount" type="text">
+                                    </li>
+                                    <li>
+                                        <p>business:</p>
+                                        <input class="popup__history--business" type="text">
+                                    </li>
+                                    <li>
+                                        <p>Date:</p>
+                                        <input class="popup__history--date" type="text">
+                                    </li>
+                                    <li>
+                                        <p>Name:</p>
+                                        <input class="popup__history--name" type="text">
+                                    </li>
+                                    <li>
+                                        <p>Type:</p>
+                                        <input class="popup__history--type" type="text">
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li id = "history-template">
+                                <li class="popup__history--element">
+                                    <p class="popup__history--number">2</p>
+                                    <ul class="popup__history--info-list">
+                                        <li>
+                                            <p>Account:</p>
+                                            <input class="popup__history--account" type="text">
+                                        </li>
+                                        <li>
+                                            <p>Amount:</p>
+                                            <input class="popup__history--amount" type="text">
+                                        </li>
+                                        <li>
+                                            <p>business:</p>
+                                            <input class="popup__history--business" type="text">
+                                        </li>
+                                        <li>
+                                            <p>Date:</p>
+                                            <input class="popup__history--date" type="text">
+                                        </li>
+                                        <li>
+                                            <p>Name:</p>
+                                            <input class="popup__history--name" type="text">
+                                        </li>
+                                        <li>
+                                            <p>Type:</p>
+                                            <input class="popup__history--type" type="text">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
+
+                            <li id = "history-template">
+                                <li class="popup__history--element">
+                                    <p class="popup__history--number">3</p>
+                                    <ul class="popup__history--info-list">
+                                        <li>
+                                            <p>Account:</p>
+                                            <input class="popup__history--account" type="text">
+                                        </li>
+                                        <li>
+                                            <p>Amount:</p>
+                                            <input class="popup__history--amount" type="text">
+                                        </li>
+                                        <li>
+                                            <p>business:</p>
+                                            <input class="popup__history--business" type="text">
+                                        </li>
+                                        <li>
+                                            <p>Date:</p>
+                                            <input class="popup__history--date" type="text">
+                                        </li>
+                                        <li>
+                                            <p>Name:</p>
+                                            <input class="popup__history--name" type="text">
+                                        </li>
+                                        <li>
+                                            <p>Type:</p>
+                                            <input class="popup__history--type" type="text">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
+                        </ul>
+
+                    <p>
+                        Posts
+                        <button class="popup__posts-button" type="button"></button>
+                    </p>
+
+                    <ul class="popup__posts">
+                        <li class="popup__post--element">
+                            <p>1</p>
+                            <ul>
+                                <li>
+                                    <p>
+                                        Paragraph
+                                        <input class="popup__posts--paragraph" type="text">
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Sentence
+                                        <input class="popup__posts--sentence" type="text">
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        sentences
+                                        <input class="popup__posts--sentences" type="text">
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>words</p>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                1
+                                                <input class="popup__posts--word" type="text"></input>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                2
+                                                <input class="popup__posts--word" type="text"></input>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                3
+                                                <input class="popup__posts--word" type="text"></input>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="popup__post--element">
+                            <p>2</p>
+                            <ul>
+                                <li>
+                                    <p>
+                                        Paragraph
+                                        <input class="popup__posts--paragraph" type="text">
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Sentence
+                                        <input class="popup__posts--sentence" type="text">
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        sentences
+                                        <input class="popup__posts--sentences" type="text">
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>words</p>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                1
+                                                <input class="popup__posts--word" type="text"></input>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                2
+                                                <input class="popup__posts--word" type="text"></input>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                3
+                                                <input class="popup__posts--word" type="text"></input>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="popup__post--element">
+                            <p>3</p>
+                            <ul>
+                                <li>
+                                    <p>
+                                        Paragraph
+                                        <input class="popup__posts--paragraph" type="text">
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Sentence
+                                        <input class="popup__posts--sentence" type="text">
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        sentences
+                                        <input class="popup__posts--sentences" type="text">
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>words</p>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                1
+                                                <input class="popup__posts--word" type="text"></input>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                2
+                                                <input class="popup__posts--word" type="text"></input>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                3
+                                                <input class="popup__posts--word" type="text"></input>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    </div>
+                    <button class="popup__open" type ="button"></button>
+                    <button class="popup__submit" type="submit">Save</button>
+                </form>
+            </template>
+<!--  -->
         </footer>
     </body>
     <script type="text/javascript" src="dist/bundle.js"></script>
