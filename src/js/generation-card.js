@@ -1,18 +1,18 @@
 // function for generate user card
-import {getData} from "./api.js";
-import { toggleButton } from "./util.js";
-import {confirmSettings} from "./util.js";
-const example = [];
 
 const generateCard = (user) => {
-    const li = document.createElement("li");
     // find template copy and save it to cardExample
     const cardExample = document.querySelector('#card').content.querySelector('.popup');
     // clone it
     const userElement = cardExample.cloneNode(true);
     // append id for current card
-    userElement.id = user.id; 
-    // append avatart to card
+    if (user.id == null) {
+        userElement.id = 0
+    }
+    else {
+        userElement.id = user.id; 
+    }
+        // append avatart to card
     // userElement.querySelector('.popup__avatar').src = user.avatar;
     // append user name and title
     userElement.querySelector('.popup__title').textContent = user.name;
@@ -88,15 +88,7 @@ const generateCard = (user) => {
         }
     }
 
-    
-    const list = document.querySelector('#block');
-    li.appendChild(userElement);
-    list.appendChild(li);
-    
-    toggleButton(userElement);
-    confirmSettings(userElement);
+    return userElement;
 }
 
-for (let i = 0; i<localStorage.length; i++) {
-    generateCard(JSON.parse(localStorage.getItem(`${i}`)));
-}
+export {generateCard};

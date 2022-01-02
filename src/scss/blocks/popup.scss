@@ -102,6 +102,7 @@
 .popup__favorite {
     position: absolute;
     left: 0;
+    margin-left: 20px;
     margin-top: 5px;
 }
 
@@ -127,10 +128,12 @@
     left: auto;
     right: auto;
     width: 40px;
+    height: 23px;
     background-color: inherit;
     border: none;
 
     &::before {
+        top: 0;
         content: "";
         width: 5px;
         height: 4px;

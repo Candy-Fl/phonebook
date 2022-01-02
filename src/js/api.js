@@ -16,7 +16,7 @@ const getData = () => {
         });
 }
 
-// call getData() to create localStorage if its empty
+// call getData() to create localStorage if it is empty
 
 if (localStorage) {
 
